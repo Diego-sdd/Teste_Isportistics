@@ -1,0 +1,46 @@
+:root {
+    --primary: #00b8e2;
+}
+.header_body{
+    background-color: var(--primary);
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 99999;
+}
+.icon{
+    background-color: red;
+}
+.header_body input{
+    margin-top:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn_cadastrar {
+    margin-top: 20px !important;
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+    font-size: 11pt !important; 
+    padding-top: 8px !important;
+    padding-bottom: 9px !important;
+}
+.body_header_show{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    
+.header_body{
+    height: 50px;
+    position: absolute;
+}
+.header_body .primary{
+    margin-top:40px ;
+    margin-bottom: 0px;
+}
+.body_header_show{
+    display:block;
+    margin-top: 70px;
+    text-align: center;
+}
+    
+}
