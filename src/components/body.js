@@ -20,7 +20,7 @@ class Body extends Component {
                     <MDBCol md="1">
 
                     </MDBCol>
-                    <MDBCol md="6">
+                    <MDBCol md="5">
                         <Table />
                     </MDBCol>
                     <MDBCol md="5">

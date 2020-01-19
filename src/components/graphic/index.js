@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Welcome } from "react";
 import FusionCharts from "fusioncharts";
 import { MDBRow } from "mdbreact";
 import charts from "fusioncharts/fusioncharts.charts";
@@ -8,47 +8,8 @@ import api from '../service/api';
 ReactFusioncharts.fcRoot(FusionCharts, FusionTheme, charts);
 
 
-
 class Graphic extends Component {
 
-
-    chartData = [
-        {
-            label: "Apache",
-            value: "32647479"
-        },
-        {
-            label: "Microsoft",
-            value: "22100932"
-        },
-        {
-            label: "Zeus",
-            value: "14376"
-        },
-        {
-            label: "Other",
-            value: "18674221"
-        }
-    ];
-
-    chartConfigs = {
-        type: "pie3d",
-        width: "100%",
-        height: "400",
-        dataFormat: "JSON",
-        dataSource: {
-            chart: {
-                caption: "Market Share of Web Servers",
-                plottooltext: "<b>$percentValue</b> of web servers run on $label servers",
-                showlegend: "1",
-                showpercentvalues: "1",
-                legendposition: "bottom",
-                usedataplotcolorforlabels: "1",
-                theme: "fusion"
-            },
-            data: chartData
-        }
-    };
 
 
     state = {
@@ -60,20 +21,60 @@ class Graphic extends Component {
     loadUsers = async () => {
         const reponse = await api.get("/users");
         this.setState({ users: reponse.data });
+        console.log(reponse.data);
     }
-
     render() {
 
-        return (
-            <MDBRow>
-                <div className="aa">
-                    {this.state.users.map(user => (
-                        <h2 key={user._id}>{user.nm_name}</h2>
-                    ))}
-                </div>
+        const datavalor = [
+            {
+                label: 'Diego',
+                value: '10'
+            },
+            {
+                label: 'Rafa',
+                value: '20'
+            }, {
+                label: 'Carlos',
+                value: '15'
+            },
+            {
+                label: 'Leandro',
+                value: '12'
+            }
 
-                <ReactFusioncharts {...chartConfigs} />
-            </MDBRow>
+        ]
+
+
+        {/* <div className="aa">
+                    {this.state.users.map(user => (
+                        user.qt_participation
+                    ))}
+                </div> */}
+
+        return (
+
+
+            <ReactFusioncharts {...{
+                type: "pie3d",
+                width: "100%",
+                height: "400",
+                dataFormat: "JSON",
+                dataSource: {
+                    chart: {
+                        showlegend: "1",
+                        showpercentvalues: "1",
+                        legendposition: "bottom",
+                        usedataplotcolorforlabels: "1",
+                        theme: "fusion"
+                    },
+                    data: datavalor
+                }
+            }}
+            />
+
+
+
+
         );
     }
 }

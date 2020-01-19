@@ -46,7 +46,15 @@ class NavbarPage extends Component {
 
         axios.post('http://localhost:8080/users/create', userObject)
             .then((res) => {
-                console.log(res.data)
+                const Swal = require('sweetalert2');
+                Swal.fire({
+                    title: 'Cadastro Realizado com Sucesso',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar',
+                }).then(function () {
+                    window.location.reload();
+                }
+                );
             }).catch((error) => {
                 console.log(error)
             });
@@ -100,7 +108,7 @@ class NavbarPage extends Component {
                                     value={this.state.qt_participation} onChange={this.onChangeUserparticipation}
                                     type="text"
                                     className="form-control"
-                                    placeholder="First name"
+                                    placeholder="Participation"
                                     id="defaultFormRegisterConfirmEx3"
                                     required
 
@@ -110,8 +118,8 @@ class NavbarPage extends Component {
                             </MDBCol>
                             <MDBCol md="2" sm="6">
 
-                                <div className="form-group">
-                                    <input type="submit" value="Create User" className="btn btn-success btn-block" />
+                                <div className="form-group ">
+                                    <input type="submit" value="Create User" className="btn_cadastrar" />
                                 </div>
                             </MDBCol>
 

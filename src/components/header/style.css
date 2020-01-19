@@ -23,6 +23,8 @@
     font-size: 11pt !important; 
     padding-top: 8px !important;
     padding-bottom: 9px !important;
+    background-color: #E6C472;
+    border-radius: 10px;
 }
 .body_header_show{
     display: none;

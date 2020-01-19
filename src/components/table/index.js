@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { MDBDataTable, MDBRow } from "mdbreact";
 import axios from 'axios';
 import DataTable from './data-table';
-
-
-
+import './style.css';
 
 
 export default class Table extends Component {
@@ -32,24 +30,19 @@ export default class Table extends Component {
 
     render() {
         return (
+            <table className="table table-striped">
+                <thead className="thead-dark">
+                    <tr>
+                        <td id="name">Name</td>
+                        <td id="lname">Last Name</td>
+                        <td id="participation">Participation</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.dataTable()}
+                </tbody>
 
-            <div className="wrapper-users">
-                <div className="container">
-                    <table className="table table-striped table-dark">
-                        <thead className="thead-dark">
-                            <tr>
-                                <td>Name</td>
-                                <td>Last Name</td>
-                                <td>Participation</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.dataTable()}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+            </table>
 
         );
     }

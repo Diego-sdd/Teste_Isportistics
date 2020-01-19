@@ -10,9 +10,12 @@ let userSchema = new Schema({
     },
     qt_participation: {
         type: String
-    }
+    },
+
 }, {
     collection: 'users'
-})
+}
+)
+
 
 module.exports = mongoose.model('User', userSchema)
