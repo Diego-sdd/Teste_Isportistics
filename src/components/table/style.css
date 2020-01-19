@@ -1,22 +1,22 @@
-table{
-    border:1px solid rgba(150, 148, 148, 0.493);
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    overflow-x:auto;
+    margin-top: 70px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #dddddd;
     text-align: center;
-}
-table tr #name{
-    padding-left: 5%;
-    color:black;
-    font-size:12pt;
-    font-weight: bold;
-}
-table tr #lname{
-    padding-left: 10%;
-    color:black;
-    font-size:12pt;
-    font-weight: bold;
-}
-table tr #participation{
-    padding-left: 3%;
-    color:black;
-    font-size:12pt;
-    font-weight: bold;
-}
+  }
+  thead td{
+      font-size: 11pt !important;
+      font-weight: bold !important;
+      color:black;
+  }
+  
+tr:nth-child(even){background-color: #f2f2f2}

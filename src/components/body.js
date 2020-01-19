@@ -5,7 +5,6 @@ import Graphic from './graphic/index';
 import Table from './table/index';
 
 
-
 class Body extends Component {
     render() {
         return (
@@ -14,9 +13,11 @@ class Body extends Component {
                     <MDBCol md="12">
                         <div className="body_header">
                             <h1 className="title">Data</h1>
-                            <p>Um backlog é uma lista de itens priorizados a serem desenvolvidos para um software.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in porttitor tortor. </p>
                         </div>
                     </MDBCol>
+                </MDBRow>
+                <MDBRow className="row_content">
                     <MDBCol md="1">
 
                     </MDBCol>

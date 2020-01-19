@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { MDBRow, MDBCol, MDBContainer, MDBBtn } from "mdbreact";
+import { MDBRow, MDBCol, MDBContainer } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 
 class NavbarPage extends Component {
-
-
-
 
     constructor(props) {
         super(props)
@@ -58,7 +55,6 @@ class NavbarPage extends Component {
             }).catch((error) => {
                 console.log(error)
             });
-
         this.setState({ nm_name: '', ds_surname: '', qt_participation: '' })
     }
 
@@ -86,12 +82,9 @@ class NavbarPage extends Component {
                                     placeholder="First name"
                                     id="defaultFormRegisterNameEx"
                                     required
-
-
                                 />
                             </MDBCol>
                             <MDBCol md="2" sm="6">
-
                                 <input
                                     value={this.state.ds_surname} onChange={this.onChangeUserSurname}
                                     type="text"
@@ -99,9 +92,7 @@ class NavbarPage extends Component {
                                     placeholder="Last name"
                                     id="defaultFormRegisterEmailEx2"
                                     required
-
                                 />
-
                             </MDBCol>
                             <MDBCol md="2" sm="6" xs="6">
                                 <input
@@ -111,13 +102,10 @@ class NavbarPage extends Component {
                                     placeholder="Participation"
                                     id="defaultFormRegisterConfirmEx3"
                                     required
-
-
                                 />
 
                             </MDBCol>
                             <MDBCol md="2" sm="6">
-
                                 <div className="form-group ">
                                     <input type="submit" value="Create User" className="btn_cadastrar" />
                                 </div>

@@ -2,14 +2,14 @@
     --primary: #00b8e2;
 }
 body{
-    margin-top:110px !important;
+    margin-top:140px !important;
 }
 .body_header{
     text-align: center;
     margin-bottom: 50px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 763px) {
 .body_header{
     display: none;
 }
@@ -17,4 +17,8 @@ body{
 body{
     margin-top:600px !important;
 }
+}
+
+.row_content{
+    margin-top: -30px !important;
 }

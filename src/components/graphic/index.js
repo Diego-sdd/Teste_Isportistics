@@ -1,6 +1,5 @@
-import React, { Component, Welcome } from "react";
+import React, { Component } from "react";
 import FusionCharts from "fusioncharts";
-import { MDBRow } from "mdbreact";
 import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
@@ -9,8 +8,6 @@ ReactFusioncharts.fcRoot(FusionCharts, FusionTheme, charts);
 
 
 class Graphic extends Component {
-
-
 
     state = {
         users: []
@@ -21,41 +18,32 @@ class Graphic extends Component {
     loadUsers = async () => {
         const reponse = await api.get("/users");
         this.setState({ users: reponse.data });
-        console.log(reponse.data);
     }
-    render() {
 
-        const datavalor = [
+    datavalor() {
+        return [
             {
-                label: 'Diego',
+                label: 'Diego Dias',
                 value: '10'
             },
             {
-                label: 'Rafa',
-                value: '20'
-            }, {
-                label: 'Carlos',
-                value: '15'
+                label: 'Carla Mello',
+                value: '5'
             },
             {
-                label: 'Leandro',
-                value: '12'
-            }
+                label: 'Roberto',
+                value: '8'
+            },
+        ];
+    }
 
-        ]
 
 
-        {/* <div className="aa">
-                    {this.state.users.map(user => (
-                        user.qt_participation
-                    ))}
-                </div> */}
+    render() {
 
         return (
-
-
             <ReactFusioncharts {...{
-                type: "pie3d",
+                type: "pie2d",
                 width: "100%",
                 height: "400",
                 dataFormat: "JSON",
@@ -67,14 +55,10 @@ class Graphic extends Component {
                         usedataplotcolorforlabels: "1",
                         theme: "fusion"
                     },
-                    data: datavalor
+                    data: this.datavalor()
                 }
             }}
             />
-
-
-
-
         );
     }
 }
